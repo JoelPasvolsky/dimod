@@ -95,10 +95,9 @@ def compute_ess(x: np.ndarray, batch_size: int | None = None) -> float:
                   estimate_effective_sample_size(mc_energy)/num_chains)
             # Effective sample size per chain (MH): 12.496482970401358
 
-        Use a larger number of sweeps to achieve larger ESS
-
-        >>> num_sweeps = 10
-        Effective sample size per chain (MH): 64.44999653861495
+        Use a larger number of sweeps to achieve larger ESS. For example,
+        ``num_sweeps = 10`` produces an effective sample size per chain of
+        ~64.45.
 
     Args:
         x: An (m, n) matrix where rows index independent Markov chains and columns index
