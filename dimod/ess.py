@@ -30,8 +30,9 @@ __all__ = ['compute_ess', 'compute_ess_sampleset']
 def compute_ess(x: np.ndarray, batch_size: int | None = None) -> float:
     """Estimates the effective sample size of ``x``.
 
-    NOTE: The estimate can be nan or negative for extreme cases (e.g., constants). This can occur
-    by definition of the estimator and is not a bug.
+    .. note:: The estimate can be nan or negative for extreme cases (e.g.,
+        constants). This can occur by definition of the estimator and is not a
+        bug.
 
     Examples:
         These two examples demonstrate typical use cases of the estimator based on an energy statistic.
@@ -39,6 +40,7 @@ def compute_ess(x: np.ndarray, batch_size: int | None = None) -> float:
         Metropolis-Hastings samplers (one with one sweep, another with ten sweeps).
 
         Example (1): QPU
+
         .. code-block:: python
 
             import numpy as np
@@ -94,6 +96,7 @@ def compute_ess(x: np.ndarray, batch_size: int | None = None) -> float:
             # Effective sample size per chain (MH): 12.496482970401358
 
         Use a larger number of sweeps to achieve larger ESS
+
         >>> num_sweeps = 10
         Effective sample size per chain (MH): 64.44999653861495
 
